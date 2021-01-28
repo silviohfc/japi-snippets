@@ -1,0 +1,9 @@
+{
+  "Test Snippet": {
+    "prefix": "umtest",
+    "body": [
+      "const test = 1"
+    ],
+    "description": "Just a simple test"
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "japisnippets",
+    "displayName": "Jest API Snippets",
+    "description": "Simple Jest API tests snippet generator",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.52.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+              "language": "typescript",
+              "path": "./snippets/snippets.code-snippets"
+          }
+        ]
+    }
+}
