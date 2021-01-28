@@ -1,8 +1,14 @@
 {
-    "name": "japisnippets",
+    "name": "jest-api-snippets",
     "displayName": "Jest API Snippets",
     "description": "Simple Jest API tests snippet generator",
     "version": "1.0.0",
+    "publisher": "Silvio Ferreira",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/silviohfc/japi-snippets"
+    },
+    "icon": "icon.png",
     "engines": {
         "vscode": "^1.52.0"
     },
