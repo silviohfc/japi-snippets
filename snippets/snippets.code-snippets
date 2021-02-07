@@ -1,171 +1,145 @@
 {
-	"Jest common test body": {
-		"prefix": "jDesc",
-		"body": [
-			"describe('Testing ${1:MyAPI}', () => {",
-			"\tit('should $2', () => {",
-			"\t\tconst { sut } = makeSut()$0",
-			"\t})",
-			"})"
-		],
-		"description": "Create Jest description body"
+  "Create JS require": {
+    "prefix": "jReq",
+    "body": [
+      "const ${1:MyFunction} = require('${0:path}');"
+    ],
+    "description": "Create JS require"
+  },
+
+	"Create Jest description body": {
+    "prefix": "jDesc",
+    "body": [
+      "describe('$1', () => {",
+      "  $0",
+      "});"
+    ],
+    "description": "Create Jest description body"
   },
   
-  "Jest async common test body": {
-		"prefix": "jDescAsync",
-		"body": [
-			"describe('Testing ${1:MyAPI}', () => {",
-      "\tit('should $2', async () => {",
-      "\t\tconst { sut } = makeSut()$0",
-      "\t})",
-      "})"
-		],
-		"description": "Create async Jest description body"
-  },
-  
-  "Jest single test body": {
-		"prefix": "jTest",
-		"body": [
+  "Create Jest it body": {
+    "prefix": "jIt",
+    "body": [
       "it('should $1', () => {",
-      "\tconst { sut } = makeSut()$0",
-      "})",
-		],
-		"description": "Create Jest test body"
+      "  const { sut } = makeSut();",
+      "  $0",
+      "});"
+    ],
+    "description": "Create Jest it body"
   },
 
-  "Jest single async test body": {
-		"prefix": "jTestAsync",
-		"body": [
+  "Create Jest async it body": {
+    "prefix": "jItAsync",
+    "body": [
       "it('should $1', async () => {",
-      "\tconst { sut } = makeSut()$0",
-      "})",
-		],
-		"description": "Create Jest async test body"
+      "  const { sut } = makeSut();",
+      "  $0",
+      "});"
+    ],
+    "description": "Create Jest async it body"
   },
 
-  "Jest API test template": {
-		"prefix": "jApi",
-		"body": [
-      "const makeSut = () => {",
-      "\tconst sut = ${1|new MyClass(),myController()|}",
-      "\treturn { sut }",
-      "}",
-      "",
-      "describe('Testing ${0:MyAPI}', () => {",
-      "\tit('should return 400 if <param name> is missing', () => {",
-      "\t\tconst { sut } = makeSut()",
-      "\t})",
-      "\tit('should call <function name> with correct values', () => {",
-      "\t\tconst { sut } = makeSut()",
-      "\t})",
-      "\tit('should return 500 if <function name> throws', () => {",
-      "\t\tconst { sut } = makeSut()",
-      "\t})",
-      "\tit('should return 200 if success', () => {",
-      "\t\tconst { sut } = makeSut()",
-      "\t})",
-      "})"
-		],
-		"description": "Create Jest API with common tests template"
+  "Create Jest test body": {
+    "prefix": "jTest",
+    "body": [
+      "test('should $1', () => {",
+      "  const { sut } = makeSut();",
+      "  $0",
+      "});"
+    ],
+    "description": "Create Jest test body"
   },
 
-  "Jest API async test template": {
-		"prefix": "jApiAsync",
-		"body": [
-      "const makeSut = () => {",
-      "\tconst sut = ${1|new MyClass(),myController()|}",
-      "\treturn { sut }",
-      "}",
-      "",
-      "describe('Testing ${0:MyAPI}', () => {",
-      "\tit('should return 400 if <param name> is missing', async () => {",
-      "\t\tconst { sut } = makeSut()",
-      "\t})",
-      "\tit('should call <function name> with correct values', async () => {",
-      "\t\tconst { sut } = makeSut()",
-      "\t})",
-      "\tit('should return 500 if <function name> throws', async () => {",
-      "\t\tconst { sut } = makeSut()",
-      "\t})",
-      "\tit('should return 200 if success', async () => {",
-      "\t\tconst { sut } = makeSut()",
-      "\t})",
-      "})"
-		],
-		"description": "Create Jest API with common async tests template"
+  "Create Jest async test body": {
+    "prefix": "jTestAsync",
+    "body": [
+      "test('should $1', async () => {",
+      "  const { sut } = makeSut();",
+      "  $0",
+      "});"
+    ],
+    "description": "Create Jest async test body"
   },
 
-  "Jest mock template": {
-		"prefix": "jMock",
-		"body": [
-			"jest.mock('${0:Path}')",
-		],
-		"description": "Create Jest mock function"
+  "Create Jest mock": {
+    "prefix": "jMock",
+    "body": [
+      "jest.mock('${0:path}');"
+    ],
+    "description": "Create Jest mock"
   },
 
-  "Jest mock with spyOn template": {
-		"prefix": "jMockSpy",
-		"body": [
-			"jest.mock('${1:Path}')",
-			"jest.spyOn(${2:Object}, '${3:Function}').mockImplementation({",
-			"\t$0",
-			"})",
-		],
-		"description": "Create Jest mock with spyOn function"
+  "Create Jest Mock with spyOn and MockImplementation": {
+    "prefix": "jMockSpy",
+    "body": [
+      "jest.mock('${1:path}');",
+      "jest.spyOn(${2:MyClass}, '${3:myMethod}').mockImplementation(() => {",
+      "  ${0:return 'Hello World!'}",
+      "});"
+    ],
+    "description": "Create Jest Mock with spyOn and MockImplementation"
   },
 
-  "Jest spyOn template": {
+  "Create Jest spyOn": {
 		"prefix": "jSpy",
 		"body": [
-			"jest.spyOn(${1:Object}, '${0:Function}')",
+			"jest.spyOn(${1:MyClass}, '${0:myMethod}');",
 		],
-		"description": "Create Jest spyOn function"
+		"description": "Create Jest spyOn"
   },
 
-  "Jest spyOn with mockImplementation": {
+  "Create Jest spyOn with mockImplementation": {
 		"prefix": "jSpyImp",
 		"body": [
-			"jest.spyOn(${1:Object}, '${2:Function}').mockImplementation({",
-			"\t$0",
-			"})",
+			"jest.spyOn(${1:MyClass}, '${2:myMethod}').mockImplementation(() => {",
+      "  ${0:return 'Hello World!'}",
+      "});"
 		],
-		"description": "Create Jest spyOn with mockImplementation function"
+		"description": "Create Jest spyOn with mockImplementation"
   },
 
-  "Jest spyOn with mockImplementationOnce": {
+  "Create Jest spyOn with mockImplementationOnce": {
 		"prefix": "jSpyImpOnce",
 		"body": [
-			"jest.spyOn(${1:Object}, '${2:Function}').mockImplementationOnce({",
-			"\t$0",
-			"})",
+			"jest.spyOn(${1:MyClass}, '${2:myMethod}').mockImplementationOnce(() => {",
+      "  ${0:return 'Hello World!'}",
+      "});"
 		],
-		"description": "Create Jest spyOn with mockImplementationOnce function"
+		"description": "Create Jest spyOn with mockImplementationOnce"
   },
 
-  "Jest makeSut function": {
-		"prefix": "jMakeSut",
+  "Create Jest spyOn with mockReturnValue": {
+		"prefix": "jSpyRet",
 		"body": [
-			"const makeSut = () => {",
-      "\tconst sut = ${1|new MyClass(),myController()|}",
-      "\treturn { sut }",
-      "}",
+			"jest.spyOn(${1:MyClass}, '${2:myMethod}').mockReturnValue(true);",
 		],
-		"description": "Create sut factory makeSut()"
+		"description": "Create Jest spyOn with mockReturnValue"
   },
 
-  "Jest declare sut": {
+  "Create Jest spyOn with mockReturnValueOnce": {
+		"prefix": "jSpyRetOnce",
+		"body": [
+			"jest.spyOn(${1:MyClass}, '${2:myMethod}').mockReturnValueOnce(true);",
+		],
+		"description": "Create Jest spyOn with mockReturnValueOnce"
+  },
+
+  "Create makeSut factory": {
+    "prefix": "jMakeSut",
+    "body": [
+      "function makeSut() {",
+      "  const sut = new ${0:MyClass()};",
+      "  return { sut };",
+      "}"
+    ],
+    "description": "Create makeSut factory"
+  },
+
+  "Declare System Under Test variable (SUT)": {
 		"prefix": "jSut",
 		"body": [
-			"const sut = makeSut()"
+			"const sut = makeSut();"
 		],
-		"description": "Create sut declaration"
-  },
-
-  "Var": {
-		"prefix": "var",
-		"body": [
-			"const sut = ${1|new MyClass(),myController()|}"
-		],
-		"description": "Create sut declaration"
+		"description": "Declare System Under Test variable (SUT)"
   },
 }
