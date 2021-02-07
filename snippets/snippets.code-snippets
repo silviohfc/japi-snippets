@@ -111,7 +111,7 @@
   "Create Jest spyOn with mockReturnValue": {
 		"prefix": "jSpyRet",
 		"body": [
-			"jest.spyOn(${1:MyClass}, '${2:myMethod}').mockReturnValue(true);",
+			"jest.spyOn(${1:MyClass}, '${2:myMethod}').mockReturnValue(${0:true});",
 		],
 		"description": "Create Jest spyOn with mockReturnValue"
   },
@@ -119,7 +119,7 @@
   "Create Jest spyOn with mockReturnValueOnce": {
 		"prefix": "jSpyRetOnce",
 		"body": [
-			"jest.spyOn(${1:MyClass}, '${2:myMethod}').mockReturnValueOnce(true);",
+			"jest.spyOn(${1:MyClass}, '${2:myMethod}').mockReturnValueOnce(${0:true});",
 		],
 		"description": "Create Jest spyOn with mockReturnValueOnce"
   },
@@ -141,5 +141,54 @@
 			"const sut = makeSut();"
 		],
 		"description": "Declare System Under Test variable (SUT)"
+  },
+
+  "Create API template tests": {
+    "prefix": "jApi",
+    "body": [
+      "const ${1:MyClass} = require('${0:Path}');",
+      "",
+      "function makeSut(){",
+      "  const sut = new ${1:MyClass}();",
+      "  return { sut };",
+      "}",
+      "",
+      "describe('${1:MyClass}', () => {",
+      "  describe('API Functions', () => {",
+      "    it('should call myApiFunction with correct params', async () => {",
+      "      const { sut } = makeSut();",
+      "      ",
+      "    });",
+      "",
+      "    it('should call myApiFunction2 with correct params', async () => {",
+      "      const { sut } = makeSut();",
+      "      ",
+      "    });",
+      "  });",
+      "",
+      "  describe('API Responses', () => {",
+      "    it('should return 400 if some params is wrong', async () => {",
+      "      const { sut } = makeSut();",
+      "",
+      "    });",
+      "",
+      "    it('should return 404 if not found data', async () => {",
+      "      const { sut } = makeSut();",
+      "      ",
+      "    });",
+      "",
+      "    it('should return 500 if internal server error', async () => {",
+      "      const { sut } = makeSut();",
+      "      ",
+      "    });",
+      "",
+      "    it('should return 200 if success', async () => {",
+      "      const { sut } = makeSut();",
+      "      ",
+      "    });",
+      "  });",
+      "});"
+    ],
+    "description": "Create API template tests"
   },
 }
