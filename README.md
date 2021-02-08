@@ -1,6 +1,6 @@
 # VSCode Jest API Snippets
 
-Javascript Jest snippets extension for Visual Studio Code. API's test development helper.
+Javascript [Jest](https://jestjs.io/) snippets extension for [Visual Studio Code](https://code.visualstudio.com/). API tests development helper.
 
 ![](https://i.ibb.co/1sD3BxJ/japi.gif)
 
