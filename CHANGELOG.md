@@ -1,6 +1,6 @@
 # Change Log
 
-All notable changes to the "japisnippets" extension will be documented in this file.
+All notable changes to the Jest API Snippets extension will be documented in this file.
 
 ## [1.0.0]
 
