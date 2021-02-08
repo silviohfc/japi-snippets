@@ -8,6 +8,7 @@
       "type": "git",
       "url": "https://github.com/silviohfc/japi-snippets"
     },
+    "license": "MIT",
     "icon": "icon.png",
     "engines": {
         "vscode": "^1.52.0"
