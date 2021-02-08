@@ -1,65 +1,35 @@
-# japisnippets README
+# VSCode Jest API Snippets
 
-This is the README for your extension "japisnippets". After writing up a brief description, we recommend including the following sections.
+Javascript Jest snippets extension for Visual Studio Code. API's test development helper.
 
-## Features
+![](https://i.ibb.co/1sD3BxJ/japi.gif)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Snippets
 
-For example if there is an image subfolder under your extension project workspace:
+### Global
+| Trigger     | Content                           |
+| ----------- | --------------------------------- |
+| jDesc       | describe                          |
+| jIt         | it                                |
+| jTest       | test                              |
+| jMock       | jest.mock                         |
+| jMockSpy    | jest.mock and jest.spyOn          |
+| jSpy        | jest.spyOn                        |
+| jSpyImp     | jest.spyOn.mockImplementation     |
+| jSpyImpOnce | jest.spyOn.mockImplementationOnce |
+| jSpyRet     | jest.spyOn.mockReturnValue        |
+| jSpyRetOnce | jest.spyOn.mockReturnValueOnce    |
 
-\!\[feature X\]\(images/feature-x.png\)
+### Async
+| Trigger    | Content           |
+| ---------- | ----------------- |
+| jItAsync   | asynchronous it   |
+| jTestAsync | asynchronous test |
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+### API Helpers
+| Trigger  | Content                        |
+| -------- | ------------------------------ |
+| jReq     | javascript require template    |
+| jMakeSut | sut factory function           |
+| jSut     | sut declaration                |
+| jApi     | asynchronous API test template |
